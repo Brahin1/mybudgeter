@@ -6,3 +6,6 @@ mybudgeter-backup-*.json
 # OS cruft
 .DS_Store
 Thumbs.db
+
+# Local tooling
+.claude/

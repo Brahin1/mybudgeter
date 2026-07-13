@@ -25,7 +25,18 @@ body {
   color: var(--text);
   min-height: 100vh;
   overscroll-behavior-y: none;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* Kill iOS double-tap zoom / tap delay on controls without disabling pinch. */
+button, a, select, input, .row { touch-action: manipulation; }
+
+.tabbar, .fab, .app-header {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+noscript { display: block; padding: 40px 20px; text-align: center; color: var(--text-dim); }
 
 /* ---- layout ---- */
 

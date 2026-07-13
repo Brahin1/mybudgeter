@@ -1,6 +1,6 @@
 // MyBudgeter service worker — cache-first so the app works fully offline.
 // Bump CACHE_VERSION on every deploy that changes any asset.
-const CACHE_VERSION = 'mybudgeter-v1';
+const CACHE_VERSION = 'mybudgeter-v2';
 
 const ASSETS = [
   './',
