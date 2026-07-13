@@ -55,7 +55,7 @@ export default {
           </div>
           <div class="stat" style="border:none;padding:2px 0">
             <div class="label">Income</div>
-            <div class="value" style="color:var(--accent)">${fmtMoney(monthIncome)}</div>
+            <div class="value" style="color:var(--pos)">${fmtMoney(monthIncome)}</div>
           </div>
         </div>
         ${totalBudget ? `
