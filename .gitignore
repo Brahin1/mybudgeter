@@ -1,0 +1,8 @@
+# Local data exports — never commit real financial data
+*.backup.json
+*.export.json
+mybudgeter-backup-*.json
+
+# OS cruft
+.DS_Store
+Thumbs.db
