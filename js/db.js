@@ -36,19 +36,23 @@ export function openDB() {
   return dbPromise;
 }
 
+const REQ_HOLDER = Symbol('reqHolder');
+
 function op(storeName, mode, fn) {
   return openDB().then((db) => new Promise((resolve, reject) => {
     const tx = db.transaction(storeName, mode);
     const result = fn(tx.objectStore(storeName), tx);
-    tx.oncomplete = () => resolve(result.__value !== undefined ? result.__value : result);
+    tx.oncomplete = () => resolve(result && result[REQ_HOLDER] ? result.value : result);
     tx.onerror = () => reject(tx.error);
     tx.onabort = () => reject(tx.error);
   }));
 }
 
+// Wraps an IDBRequest so op() can resolve with its result (which may
+// legitimately be undefined, e.g. get() on a missing key).
 function reqValue(request) {
-  const holder = {};
-  request.onsuccess = () => { holder.__value = request.result; };
+  const holder = { [REQ_HOLDER]: true, value: undefined };
+  request.onsuccess = () => { holder.value = request.result; };
   return holder;
 }
 
