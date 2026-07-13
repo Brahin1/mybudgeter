@@ -1,5 +1,7 @@
 # MyBudgeter
 
+**Live app: https://brahin1.github.io/mybudgeter/**
+
 A fully offline personal budgeting app that runs in your browser and installs
 on your iPhone like a native app. No accounts, no servers, no tracking — your
 financial data never leaves your device.
@@ -22,7 +24,7 @@ financial data never leaves your device.
 
 ## Install on iPhone
 
-1. Open the app URL in **Safari**.
+1. Open **https://brahin1.github.io/mybudgeter/** in **Safari**.
 2. Tap the **Share** button (square with an arrow).
 3. Tap **Add to Home Screen**, then **Add**.
 
